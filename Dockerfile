@@ -1,7 +1,7 @@
 FROM node:lts-bookworm-slim
 
 RUN apt-get update -y &&\
-    apt-get install -y --no-install-recommends zip unzip jq curl ca-certificates gpg git &&\
+    apt-get install -y --no-install-recommends zip unzip jq curl ca-certificates gpg git xxd &&\
     curl -fsSL https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor > /usr/share/keyrings/google.gpg && \
     echo "deb [arch=$(dpkg --print-architecture) \
         signed-by=/usr/share/keyrings/google.gpg] \
@@ -14,6 +14,7 @@ RUN apt-get update -y &&\
     google-chrome --version && \
     zip --version && unzip -v && \
     jq --version && \
-    git --version
+    git --version && \
+    xxd --version
 
 CMD ["bash"]
