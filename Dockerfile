@@ -13,6 +13,7 @@ RUN apt-get update -y &&\
     npm --version && npx --version && \
     google-chrome --version && \
     zip --version && unzip -v && \
-    jq --version
+    jq --version && \
+    git --version
 
 CMD ["bash"]
