@@ -9,6 +9,8 @@ RUN apt-get update -y &&\
         > /etc/apt/sources.list.d/google.list && \
     apt-get update && \
     apt-get install -y google-chrome-stable --no-install-recommends && \
+    curl -fsSL https://github.com/egefeyzioglu/crx-id/releases/download/v0.1/crx-id --output /usr/bin/crx-id && \
+    chmod +x /usr/bin/crx-id && \
     apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* &&\
     npm --version && npx --version && \
     google-chrome --version && \
